@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Employee Login</h2>
+        
+        <!-- Optional alert message for bad credentials or post-reset updates -->
+        <% if (locals.error) { %>
+            <div class="alert alert-danger" style="background-color: #fdf2f2; color: #b91c1c; padding: 10px; border-radius: 4px; font-size: 13px; margin-bottom: 16px; border-left: 4px solid #d9534f; font-weight: 500;">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form action="/login" method="post">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    required 
+                    placeholder="name@company.com"
+                >
+            </div>
+
+            <div class="input-group">
+                <div class="password-label-row">
+                    <label for="password">Password</label>
+                    <!-- Added Forgot Password link -->
+                    <a href="/forgotPassword" class="link-forgot">Forgot Password?</a>
+                </div>
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    minlength="8" 
+                    required 
+                    placeholder="••••••••"
+                >
+            </div>
+
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+
+</body>
+</html>

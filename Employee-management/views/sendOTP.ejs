@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Portal - Security Authentication</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>EMS Portal</h1>
+                <p>Two-Factor Authentication</p>
+            </div>
+
+            <!-- Optional message banner for status updates -->
+            <% if (locals.message) { %>
+                <div class="alert alert-info"><%= message %></div>
+            <% } %>
+
+            <form action="/sendOTP" method="post">
+                <div class="input-group">
+                    <label for="email">Verify Your Identity</label>
+                    <p class="input-hint">Enter your registered email address to receive a 6-digit verification code.</p>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        required 
+                        placeholder="e.g., alex.j@company.com"
+                    >
+                </div>
+
+                <button type="submit" class="btn-auth">Send Verification Code</button>
+            </form>
+            
+            <div class="auth-footer">
+                <a href="/login" class="link-back">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

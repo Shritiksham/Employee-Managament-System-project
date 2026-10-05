@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Authentication Layout Card */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    padding: 40px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.auth-header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.auth-header h1 {
+    font-size: 24px;
+    color: #111111;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222222;
+}
+
+.input-hint {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+}
+
+/* OTP Text Specific Presentation */
+.otp-input {
+    letter-spacing: 8px;
+    text-align: center;
+    font-size: 20px !important;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn-auth {
+    width: 100%;
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-auth:hover {
+    background-color: #004494;
+}
+
+/* Status Notifications */
+.alert {
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-info {
+    background-color: #eef2f7;
+    color: #475569;
+    border-left: 4px solid #0056b3;
+}
+
+.alert-danger {
+    background-color: #fdf2f2;
+    color: #b91c1c;
+    border-left: 4px solid #d9534f;
+}
+
+/* Footer Section Links */
+.auth-footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+
+.link-back {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-back:hover {
+    text-decoration: underline;
+}
+
+.btn-resend {
+    background: none;
+    border: none;
+    color: #0056b3;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.btn-resend:hover {
+    text-decoration: underline;
+}
+
+
+.input-group input[type="password"] {
+    font-family: Arial, Helvetica, sans-serif; 
+    letter-spacing: 2px;
+}
+
+.input-group input[type="password"]::placeholder {
+    letter-spacing: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-footer p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}

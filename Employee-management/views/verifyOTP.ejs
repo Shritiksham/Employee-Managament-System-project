@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Portal - Verify OTP</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Enter Security Code</h1>
+                <p>We sent a 6-digit code to <strong><%= locals.email ? email : 'your email' %></strong></p>
+            </div>
+
+            <% if (locals.error) { %>
+                <div class="alert alert-danger"><%= error %></div>
+            <% } %>
+
+            <form action="/verifyOTP" method="post">
+                <!-- Hidden input to carry email back to the controller if needed -->
+                <input type="hidden" name="email" value="<%= locals.email %>">
+                
+                <div class="input-group">
+                    <label for="otp">One-Time Password (OTP)</label>
+                    <input 
+                        type="text" 
+                        name="otp" 
+                        id="otp" 
+                        inputmode="numeric"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        required 
+                        placeholder="0 0 0 0 0 0"
+                        class="otp-input"
+                        autocomplete="one-time-code"
+                    >
+                </div>
+
+                <button type="submit" class="btn-auth">Verify & Proceed</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Didn't receive the code?</p>
+                <form action="/sendOTP" method="post" style="display: inline;">
+                    <input type="hidden" name="email" value="<%= locals.email %>">
+                    <button type="submit" class="btn-resend">Resend OTP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

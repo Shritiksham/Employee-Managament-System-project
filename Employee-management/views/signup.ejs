@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Sign Up</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Employee Registration</h2>
+        
+        <form action="/signup" method="post">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    minlength="3" 
+                    required 
+                    placeholder="John Doe"
+                >
+                <span class="helper-text">Minimum 3 characters required</span>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    required 
+                    placeholder="name@company.com"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="role">Select Role</label>
+                <select name="role" id="role" required>
+                    <option value="" disabled selected>Choose your role...</option>
+                    <option value="employee">Employee</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    minlength="8" 
+                    required 
+                    placeholder="••••••••"
+                >
+                <span class="helper-text">Minimum 8 characters required</span>
+            </div>
+
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+</body>
+</html>

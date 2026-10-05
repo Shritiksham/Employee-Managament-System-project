@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar">
+        <h1>EMS Portal</h1>
+        <div class="nav-actions">
+            <a href="/logout" class="btn-logout">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-container">
+        
+        <div class="table-header">
+            <h2>Employee Directory</h2>
+            <a href="/Employee/add" class="btn-add">+ Add Employee</a>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- Added Photo Header -->
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < Emp.length; i++) { %>
+                    <tr>
+                        <!-- Added Photo Data Cell -->
+                        <td>
+                            <img 
+                                src="uploads/<%= Emp[i].image%>" 
+                                alt="<%= Emp[i].name %>'s profile picture" 
+                                class="emp-avatar"
+                            >
+                        </td>
+                        <td><strong><%= Emp[i].name %></strong></td>
+                        <td><span class="dept-badge"><%= Emp[i].department %></span></td>
+                        <td>Rs. <%= Emp[i].salary %></td>
+                        <td><%= Emp[i].city %></td>
+                        <td>
+                            <a href="/employees/edit/<%= Emp[i].id %>" class="link-edit">Edit</a>
+                        </td>
+                        <td>
+                            <!-- Form implementation for RESTful deletion -->
+                            <form action="/employees/delete/<%= Emp[i].id %>?_method=DELETE" method="post" class="delete-form" >
+                                <button type="submit" class="btn-delete-link">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+</body>
+</html>
+

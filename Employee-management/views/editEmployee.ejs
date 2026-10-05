@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Edit Employee</title>
+    <link rel="stylesheet" href="/css/editEmp.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar">
+        <h1>EMS Portal</h1>
+        <a href="/" class="btn-back">← Cancel & Go Back</a>
+    </nav>
+
+    <!-- Main Edit Window -->
+    <main class="main-content">
+            <h2>Edit Employee Details</h2>
+            
+            <!-- Update action path to point to your specific backend update route (e.g., /employees/edit/ID) -->
+            <form action="/employees/edit/<%=Emp.id%>?_method=PUT" method="post">
+                
+                <div class="input-group">
+                    <label for="name">Employee Name</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        minlength="3" 
+                        required 
+                        value=<%=Emp.name%>
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="department">Department</label>
+                    <select name="department" id="department" required>
+                        <option value="" disabled>Select a department...</option>
+                        <option value="HR">HR</option>
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Sales">Sales</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="salary">Annual Salary (Rs.)</label>
+                    <input 
+                        type="number" 
+                        name="salary" 
+                        id="salary" 
+                        min="10000" 
+                        required 
+                        value="<%=Emp.salary%>"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="city">City</label>
+                    <input 
+                        type="text" 
+                        name="city" 
+                        id="city" 
+                        required 
+                        value=<%=Emp.city%>
+                    >
+                </div>
+
+                <input type="submit" value="Update Employee">
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
